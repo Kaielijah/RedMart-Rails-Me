@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  root 'static_pages#home'
 
   # static pages routes, not connected to models
   get '/home', to: 'static_pages#home'
