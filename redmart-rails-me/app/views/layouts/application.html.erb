@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render 'layouts/shim' %>
+    <%= render 'partials/shim' %>
   </head>
 
   <body>
 
-    <%= render 'layouts/header'%>
+    <%= render 'partials/header'%>
         <div class="container">
           <%= yield %>
-          <%= render 'layouts/footer'%>
+          <%= render 'partials/footer'%>
         </div>
       </body>
 </html>
