@@ -1,8 +1,15 @@
 <% provide(:title, "Home") %>
 
-<!DOCTYPE html>
+
+<div class="center jumbotron">
+
     <h1>Home</h1>
     <p>
       This is the home page for the RedMart
 
     </p>
+    <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("redmartcart.png", alt: "cart"),
+            'https://lh3.ggpht.com/Wot97nXA_HmLOHX2p-z18AInwEVHVc5xqMhWhtIjaxbwZdfHqZi1X6iY5ElZKkiJsJY=w300' %>

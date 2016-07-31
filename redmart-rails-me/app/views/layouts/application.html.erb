@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+          <div class="container">
+            <%= link_to "sample app", '#', id: "logo" %>
+            <nav>
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home",   '#' %>Home</li>
+                <li><%= link_to "About",   '#' %>About</li>
+                <li><%= link_to "Contact Us", '#' %>Contact Us</li>
+                <li><%= link_to "Help", '#' %>Help</li>
+                <li><%= link_to "Log in", '#' %>Log in</li>
+
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="container">
+          <%= yield %>
+        </div>  </body>
 </html>
