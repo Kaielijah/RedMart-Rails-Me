@@ -6,7 +6,6 @@ one:
   password_digest: MyString
   delivery_address: MyString
   cc_number: 1
-  timestamps: MyString
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   password_digest: MyString
   delivery_address: MyString
   cc_number: 1
-  timestamps: MyString
