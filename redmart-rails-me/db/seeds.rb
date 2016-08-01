@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require './app/models/user'
+require './app/models/user'
+require './app/models/review'
+require './app/models/product'
 require 'faker'
 
 (0..50).each do |i|
@@ -16,5 +18,19 @@ require 'faker'
   password_digest: Faker::Internet.password,
   cc_number: Faker::Business.credit_card_number,
   delivery_address: Faker::Address.street_address
+  )
+end
+(0..50).each do |i|
+  Product.create(
+  name: Faker::Name.name,
+  description: Faker::Lorem.sentence,
+  price: Faker::Commerce.price
+  )
+end
+(0..50).each do |i|
+  Review.create(
+  user_id: rand(1..50),
+  product_id: rand(1..50),
+  feedback: Faker::Lorem.sentence
   )
 end
