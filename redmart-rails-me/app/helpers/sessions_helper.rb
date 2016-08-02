@@ -4,7 +4,7 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-<<<<<<< HEAD
+
   # Returns the current logged-in user (if any).
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
@@ -14,8 +14,7 @@ module SessionsHelper
    !current_user.nil?
  end
 
-=======
->>>>>>> advanced-login
+
 # Remembers a user in a persistent session.
   def remember(user)
     user.remember
@@ -28,12 +27,11 @@ module SessionsHelper
 
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
  # Logs out the current user.
-=======
-=======
->>>>>>> advanced-login
+
+
   # Returns the user corresponding to the remember token cookie.
    def current_user
      if (user_id = session[:user_id])
@@ -59,10 +57,8 @@ module SessionsHelper
   end
 
   # Logs out the current user.
-<<<<<<< HEAD
->>>>>>> advanced-login
-=======
->>>>>>> advanced-login
+
+
   def log_out
     forget(current_user)
     session.delete(:user_id)
