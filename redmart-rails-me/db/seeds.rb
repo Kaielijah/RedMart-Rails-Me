@@ -6,29 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require './app/models/user'
-require './app/models/review'
-require './app/models/product'
-require 'faker'
-
 (0..50).each do |i|
-  User.create(
+  User.create!(
   name: Faker::Name.name,
   email: Faker::Internet.email ,
-  password_digest: Faker::Internet.password,
+  # study on this pwd digest again, faker and seeding
+  password: "testtest",
+  password_confirmation: "testtest",
   cc_number: Faker::Business.credit_card_number,
   delivery_address: Faker::Address.street_address
   )
 end
+
 (0..50).each do |i|
-  Product.create(
+  Product.create!(
   name: Faker::Name.name,
   description: Faker::Lorem.sentence,
   price: Faker::Commerce.price
   )
 end
+
 (0..50).each do |i|
-  Review.create(
+  Review.create!(
   user_id: rand(1..50),
   product_id: rand(1..50),
   feedback: Faker::Lorem.sentence
