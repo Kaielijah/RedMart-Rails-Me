@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
-  end
-
+      @users = User.paginate(page: params[:page])
+    end
+    
   def show
     @user = User.find(params[:id])
   end
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   #confirms the correct user
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user? (@user)
+    redirect_to(root_url) unless current_user?(@user)
 end
 
 
