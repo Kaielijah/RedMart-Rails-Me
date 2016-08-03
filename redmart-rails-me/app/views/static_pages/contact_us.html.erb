@@ -1,8 +1,47 @@
 <% provide(:title, "Contact us") %>
 <!DOCTYPE html>
   <body>
-    <h1>Contact Us</h1>
+    <div class="row">
+      <h1 class="pull-left">How can we help ?</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6 p-b spacer">
+    <h3>Customer Service</h3>
     <p>
-    This is the Contact us page for RedMart
-  
+    +65 62613456 </br>
+    help@redmart.com </br>
     </p>
+    <!-- <h3>Selling Enquiries</h3>
+    Please visit this page. -->
+  </div>
+  <div class="row">
+
+
+  <div class="col-xs-12 col-md-6 col-lg-6 p-b spacer">
+
+    <form role="form" class="contactform col-sm-12" action="#" method="post">
+              <div class="form-group">
+
+
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" name="name" value="" placeholder="Enter your name here..">
+              </div>
+              <div class="form-group">
+
+                <label for="name">Email:</label>
+                <input class="form-control" type="text" name="email" value="" placeholder="Enter your email here..">
+              </div>
+              <div class="form-group">
+                <label for="name">Contact no:</label>
+                <input class="form-control" type="text" name="contactnumer" value="" placeholder="Enter your contact number here..">
+              </div>
+              <div class="form-group">
+                <label for="name">Message:</label>
+                <input class="form-control messageform" type="text" name="message" value="" placeholder="Enter your enquires here..">
+              </div>
+              <div class="form-group">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-sm pull-right modalbtn" data-toggle="modal" data-target="#myModal">Submit</button>
+</div>
+</div>
+</div>
