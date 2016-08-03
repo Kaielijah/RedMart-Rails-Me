@@ -11,7 +11,7 @@ User.create!(name:  "Example User",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
-             
+
 (0..50).each do |i|
   User.create!(
   name: Faker::Name.name,
@@ -33,9 +33,9 @@ end
 end
 
 (0..50).each do |i|
-  Review.create!(
+  Micropost.create!(
   user_id: rand(1..50),
   product_id: rand(1..50),
-  feedback: Faker::Lorem.sentence
+  content: Faker::Lorem.sentence(5)
   )
 end
