@@ -1,2 +1,13 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<% provide(:title, @product.name) %>
+
+
+
+<h1>
+  View Product
+</h1>
+
+<ul>
+<li> <%= @product.name %></li>
+<li>  <%= @product.description %></li>
+<li>    <%= @product.price %> </li>
+</ul>

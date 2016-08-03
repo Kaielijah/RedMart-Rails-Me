@@ -26,7 +26,7 @@ end
 
 (0..50).each do |i|
   Product.create!(
-  name: Faker::Name.name,
+  name: Faker::Commerce.product_name,
   description: Faker::Lorem.sentence,
   price: Faker::Commerce.price
   )
