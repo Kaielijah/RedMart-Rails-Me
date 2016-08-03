@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'partials/shim' %>
+    <%= stylesheet_link_tag 'application', '<https://fonts.googleapis.com/css?family=Open+Sans:400,300': 'reload'%>
   </head>
 
   <body>
@@ -18,11 +19,9 @@
             <div class="alert alert-<%= message_type %>"><%= message %>
             </div>
           <% end %>
-          <div class="container">
-
 
           <%= yield %>
-        </div>
+
           <%= render 'partials/footer'%>
         </div>
       </body>
