@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @microposts = @product.microposts.paginate(page: params[:page])
-
+    # @microposts = current_user.microposts.build if logged_in?
+    @micropost = @product.microposts.build
   end
 
   def new
