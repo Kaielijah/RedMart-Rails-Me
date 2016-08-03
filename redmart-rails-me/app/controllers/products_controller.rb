@@ -4,12 +4,12 @@ class ProductsController < ApplicationController
    before_action :admin_user,     only: :destroy
 
   def index
-  @product = Product.paginate(page: params[:page])
+  @products = Product.paginate(page: params[:page])
   end
 
   def show
     @product = Product.find(params[:id])
-    # @microposts = @product.microposts.paginate(page: params[:page])
+    @microposts = @product.microposts.paginate(page: params[:page])
 
   end
 
@@ -20,9 +20,9 @@ class ProductsController < ApplicationController
 # this section is for admin
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @new_product.save
       log_in @product
-      flash[:success] = 'Welcome to RedMart!'
+      flash[:success] = 'Product saved!'
       redirect_to @product
     else
       render 'new'
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = product.find(params[:id])
+    @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       flash[:success] = "Profile updated"
         redirect_to @product
@@ -43,13 +43,13 @@ class ProductsController < ApplicationController
         end
   end
   def destroy
-      product.find(params[:id]).destroy
+      Product.find(params[:id]).destroy
       flash[:success] = "product deleted"
       redirect_to products_url
     end
     private
     #confirms a logged-in product
-    def logged_in_product
+    def logged_in_user
       unless logged_in?
         store_location
         flash[:danger] = 'Please log in.'
@@ -57,15 +57,15 @@ class ProductsController < ApplicationController
       end
     end
     #confirms the correct product
-    def correct_product
-      @product = product.find(params[:id])
-      redirect_to(root_url) unless current_product?(@product)
+    def correct_user
+      @p = Product.find(params[:id])
+      redirect_to(root_url) unless current_user?(@product)
   end
 
 
   # Confirms an admin product.
-      def admin_product
-        redirect_to(root_url) unless current_product.admin?
+      def admin_user
+        redirect_to(root_url) unless current_user.admin?
       end
 
 end

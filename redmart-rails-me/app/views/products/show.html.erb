@@ -1,13 +1,29 @@
 <% provide(:title, @product.name) %>
 
 
-
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
 <h1>
   View Product
 </h1>
 
 <ul>
+  <!-- Product image -->
 <li> <%= @product.name %></li>
 <li>  <%= @product.description %></li>
 <li>    <%= @product.price %> </li>
 </ul>
+</section>
+  </aside>
+  <!-- product review -->
+  <div class="col-md-8">
+    <% if @product.microposts.any? %>
+      <h3>Microposts (<%= @product.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

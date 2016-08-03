@@ -4,12 +4,7 @@
 <%= will_paginate %>
 
 <ul class="products">
-  <li>
-  <% @products.each do |product| %>
-<%= link_to product.name, product %>
-</li>
-
-<% end %>
+  <%= render @products %>
 </ul>
 
 <%= will_paginate %>
