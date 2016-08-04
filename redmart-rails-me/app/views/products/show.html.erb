@@ -15,16 +15,19 @@
 <ul>
 
 
-
-<%= link_to "edit", edit_product_path %>
-
+    <% if logged_in? %>
+    <%= link_to "edit", edit_product_path %>
+    <% end %>
 
 
 <li>  <%= @product.description %></li>
 <li>    $<%= @product.price %> </li>
+
 </ul>
 </section>
   </aside>
+
+
   <!-- product review -->
   <div class="col-md-8">
     <% if @product.microposts.any? %>
@@ -35,7 +38,6 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
-</div>
 
     <!--posting of review here if logged in -->
     <% if logged_in? %>
@@ -51,6 +53,6 @@
     </div>
   </div>
 <% else %>
-  </div>
   <%end%>
   </div>
+</div>
