@@ -1,15 +1,18 @@
-<div class="row">
-  <div class="col-md-12">
 
 
+<li class="table-bordered table-responsive ">
 
-  <%= link_to product.name, product %>
+   <%= link_to image_tag("cart.png", alt: "cart") %>
 
+   <%= link_to product.name, product %>
+
+  <!-- <%= link_to product.description, product %>
+  <%= link_to product.price, product %> -->
 
   <% if logged_in? && admin? %>
   <%= link_to "delete", product, method: :delete,
-                                data: { confirm: "Click 'ok' to confirm" }, class: 'pull-right'%>
-                              </div>
-                            </div>
+                                data: { confirm: "Click 'ok' to confirm" }, class: 'pull-right shiftdown-btn'%>
+
 
   <%end%>
+</li></br>
