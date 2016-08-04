@@ -12,5 +12,6 @@
  *
  *= require_tree .
  *= require social-share-button
+ *=bootstrap-responsive
  *= require_self
  */

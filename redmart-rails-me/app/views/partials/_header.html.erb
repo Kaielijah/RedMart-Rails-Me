@@ -1,8 +1,12 @@
-<header class="navbar navbar-fixed-top navbar">
+<header class="navbar navbar-collapse navbar-fixed-top navbar">
+  <button type="button" class="navbar-toggle dropdown-toggle gone" data-toggle="dropdown" data-target="#myNavbar">
+            <span class="glyphicon glyphicon-option-vertical"></span>
+
+          </button>
       <div class="container">
         <%= link_to "RedMart", '/home', id: "logo" %>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
             <li><%= link_to "Products", products_path %></li>
             <% if logged_in? %>
               <% if admin? %>
@@ -10,12 +14,12 @@
 
                       <% end %>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-delay="1000" tabindex="-1">
                           Account <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu ">
                           <li><%= link_to "Profile", current_user %></li>
-                          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                          <li><%= link_to "Settings", edit_user_path(current_user)  %></li>
                           <li class="divider"></li>
                           <li>
                             <%= link_to "Log out", logout_path, method: "delete" %>
