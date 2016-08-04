@@ -10,11 +10,16 @@ class MicropostsController < ApplicationController
      flash[:success] = "Feedback submited!"
      redirect_to @product
    else
+     @feed_items = []
     redirect_to @product
     end
   end
 
   def destroy
+    @micropost.destroy
+
+    flash[:success] = "Post deleted"
+    redirect_to request.referrer || root_url
   end
 
   private
@@ -24,7 +29,7 @@ class MicropostsController < ApplicationController
    end
 
    def correct_user
-     @micropost = current_user.microposts.find_by(id: params[:id])
-     redirect_to root_url if @micropost.nil?
-   end
-end
+         @micropost = current_user.microposts.find_by(id: params[:id])
+         redirect_to root_url if @micropost.nil?
+       end
+     end
