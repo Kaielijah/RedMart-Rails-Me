@@ -1,5 +1,11 @@
 # Project 2A: Redmart E-shop
 
+
+
+### Features included for project:
+- log in & log out page
+- Update user & product informations
+- Posting/deleting(admin only) reviews 
 Develop a Redmart clone with the below minimum technical requirements.
 
 ### Technical Requirements
