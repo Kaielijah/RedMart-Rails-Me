@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'products/new'
 
-  get 'products/edit'
+  # get 'products/edit'
 
   root 'static_pages#home'
 

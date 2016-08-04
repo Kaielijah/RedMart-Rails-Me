@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     # before_action :current_user?, only:[:index]
-   before_action :correct_user, only: [:edit, :update]
-   before_action :admin_user,     only: :destroy
+  #  before_action :correct_user, only: [:edit, :update]
+   before_action :admin_user,     only: [:edit, :destroy, :update]
 
   def index
   @products = Product.paginate(page: params[:page])
@@ -23,16 +23,17 @@ class ProductsController < ApplicationController
 
   end
 # this section is for admin
-  def create
-    @product = Product.new(product_params)
-    if @new_product.save
-      log_in @product
-      flash[:success] = 'Product saved!'
-      redirect_to @product
-    else
-      render 'new'
-    end
-  end
+def create
+   @product = Product.new(product_params)
+   respond_to do |format|
+   if @product.save
+     format.html { redirect_to products_url, notice: "Product successfully added!" }
+   else
+     format.html { render :new }
+     format.json { render json: @product.errors, status: :unprocessable_entity }
+     end
+   end
+ end
   def edit
     @product = Product.find(params[:id])
   end
@@ -72,5 +73,7 @@ class ProductsController < ApplicationController
       def admin_user
         redirect_to(root_url) unless current_user.admin?
       end
-
+      def product_params
+    params.require(:product).permit(:name, :description, :price)
+  end
 end
