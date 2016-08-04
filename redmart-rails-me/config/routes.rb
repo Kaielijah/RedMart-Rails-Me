@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :products
+
   resources :products do
     resources :microposts
   end

@@ -1,6 +1,7 @@
+<div class="row">
+  <div class="col-md-12">
 
 
-<li>
 
   <%= link_to product.name, product %>
 
@@ -8,5 +9,7 @@
   <% if logged_in? && admin? %>
   <%= link_to "delete", product, method: :delete,
                                 data: { confirm: "Click 'ok' to confirm" }, class: 'pull-right'%>
+                              </div>
+                            </div>
+
   <%end%>
-</li>

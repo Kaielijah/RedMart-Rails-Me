@@ -7,19 +7,19 @@
   <aside class="col-md-4">
     <section class="user_info">
 <h1><%= @product.name %></h1>
+
+<!-- Product image -->
+<%= link_to image_tag("cart.png", alt: "cart") %> </br>
+
 </br>
 <ul>
-  <!-- Product image -->
-
-
-
-
-
-
 
 
 
 <%= link_to "edit", edit_product_path %>
+
+
+
 <li>  <%= @product.description %></li>
 <li>    $<%= @product.price %> </li>
 </ul>

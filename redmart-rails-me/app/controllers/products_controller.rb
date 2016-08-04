@@ -73,7 +73,9 @@ def create
       def admin_user
         redirect_to(root_url) unless current_user.admin?
       end
+
       def product_params
     params.require(:product).permit(:name, :description, :price)
   end
+  
 end
