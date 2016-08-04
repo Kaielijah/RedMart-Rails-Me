@@ -5,8 +5,11 @@
 ### Features included for project:
 - log in & log out page
 - Update user & product informations
-- Posting/deleting(admin only) reviews 
+- Posting/deleting(admin only) reviews
 Develop a Redmart clone with the below minimum technical requirements.
+- 3 relationship models (product, reviews, users) https://drive.google.com/open?id=0B5mbp1CiYXgYNUhJZHlzcFVoeEE
+
+
 
 ### Technical Requirements
   - Project 2A should have at least 3 models: User, Product and Reviews or Purchases. (more if they make sense) – User to represent someone using your application, Product to represent items for sale, and other to represent the main functional idea for your app
