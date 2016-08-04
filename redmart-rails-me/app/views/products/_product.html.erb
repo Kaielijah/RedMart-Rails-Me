@@ -4,8 +4,8 @@
   <%= link_to product.name, product %>
 
 
-  <% if admin? %>
+  <% if logged_in? && admin? %>
   <%= link_to "delete", product, method: :delete,
                                 data: { confirm: "Are you sure?" }, class: 'pull-right'%>
-  <%end%>                            
+  <%end%>
 </li>
