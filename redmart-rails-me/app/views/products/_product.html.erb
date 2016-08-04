@@ -1,11 +1,12 @@
 
 
 <li>
+
   <%= link_to product.name, product %>
 
 
   <% if logged_in? && admin? %>
   <%= link_to "delete", product, method: :delete,
-                                data: { confirm: "Are you sure?" }, class: 'pull-right'%>
+                                data: { confirm: "Click 'ok' to confirm" }, class: 'pull-right'%>
   <%end%>
 </li>
