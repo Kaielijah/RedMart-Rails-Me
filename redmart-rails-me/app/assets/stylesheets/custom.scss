@@ -13,7 +13,17 @@ $gray-medium-light: #eaeaea;
 }
 
 
+.img-fluid{
+  max-width: 100%;
+    height: auto;
+    margin-top: 50px;
+    // overflow: hidden;
+    // z-index: -1;
+}
+.index-z{
+  z-index: -1;
 
+}
   .gravatar {
     float: left;
     margin-right: 10px;
