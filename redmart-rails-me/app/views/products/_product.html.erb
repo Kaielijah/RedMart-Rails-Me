@@ -22,6 +22,7 @@
 <td class="col-md-12">
 
   <% if logged_in? && admin? %>
+    <%= link_to "add", product, method: :post%>
   <%= link_to "delete", product, method: :delete,
                                 data: { confirm: "Click 'ok' to confirm" }, class: 'pull-right shiftdown-btn'%>
 
